@@ -16,3 +16,10 @@ socios\
     )\
     .orderBy('porte_da_empresa', ascending=True)\
     .show()  
+spark\
+    .sql("""
+        SELECT porte_da_empresa, SUM(capital_social_da_empresa) AS Media 
+            FROM empresasView 
+            GROUP BY porte_da_empresa
+    """)\
+    .show(5)
