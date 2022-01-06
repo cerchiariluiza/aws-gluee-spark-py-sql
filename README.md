@@ -23,3 +23,4 @@ spark\
             GROUP BY porte_da_empresa
     """)\
     .show(5)
+empresas.createOrReplaceTempView("empresasView")
